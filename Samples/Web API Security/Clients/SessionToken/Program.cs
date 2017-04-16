@@ -90,6 +90,6 @@ namespace SessionToken
             return "NoMoneyLeft";
         }
         public int Age { get; set; }
-
+        public DateTime CreatedDate { get; set; }
     }
 }
