@@ -8,13 +8,13 @@ namespace OAuth2CodeFlow.Controllers
     {
         public ActionResult Index()
         {
-            var url = OAuth2Client.CreateCodeFlowUrl(
-                "https://idsrv.local/issue/oauth2/authorize",
-                "codeflowclient",
-                Constants.Scope,
-                "https://localhost:44303/callback");
+            //var url = OAuth2Client.CreateCodeFlowUrl(
+            //    "https://idsrv.local/issue/oauth2/authorize",
+            //    "codeflowclient",
+            //    Constants.Scope,
+            //    "https://localhost:44303/callback");
             
-            ViewBag.AuthorizeUrl = url;
+            //ViewBag.AuthorizeUrl = url;
 
             return View();
         }
