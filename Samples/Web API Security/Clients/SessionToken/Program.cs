@@ -89,6 +89,7 @@ namespace SessionToken
         {
             return "NoMoneyLeft";
         }
+        public int Age { get; set; }
 
     }
 }
