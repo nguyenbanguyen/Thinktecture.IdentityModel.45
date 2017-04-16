@@ -20,27 +20,27 @@ namespace SessionToken
 
         private static string RequestSessionToken()
         {
-            "Requesting session token\n".ConsoleYellow();
+            //"Requesting session token\n".ConsoleYellow();
 
             var client = new HttpClient { BaseAddress = _baseAddress };
-            client.SetBasicAuthentication("bob", "bob");
+            //client.SetBasicAuthentication("bob", "bob");
 
             var response = client.GetAsync("token").Result;
-            response.EnsureSuccessStatusCode();
+            //response.EnsureSuccessStatusCode();
 
             var tokenResponse = response.Content.ReadAsStringAsync().Result;
             var json = JObject.Parse(tokenResponse);
             var token = json["access_token"].ToString();
-            var expiresIn = int.Parse(json["expires_in"].ToString());
-            var expiration = DateTime.UtcNow.AddSeconds(expiresIn);
+            //var expiresIn = int.Parse(json["expires_in"].ToString());
+            //var expiration = DateTime.UtcNow.AddSeconds(expiresIn);
 
-            "\nSession Token:".ConsoleRed();
-            Console.WriteLine(json.ToString());
+            //"\nSession Token:".ConsoleRed();
+            //Console.WriteLine(json.ToString());
 
-            "\nExpiration:".ConsoleRed();
-            Console.WriteLine(expiration.ToLongDateString() + " " + expiration.ToLongTimeString());
+            //"\nExpiration:".ConsoleRed();
+            //Console.WriteLine(expiration.ToLongDateString() + " " + expiration.ToLongTimeString());
 
-            DecodeSessionToken(token);
+            //DecodeSessionToken(token);
             return token;
         }
 
@@ -81,5 +81,15 @@ namespace SessionToken
                 string.Format("  {0}\n", claim.Value).ConsoleGreen();
             }
         }
+        public int Name ()
+        {
+            return 1;
+        }
+        public string Money()
+        {
+            return "NoMoneyLeft";
+        }
+        public int Age { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }
